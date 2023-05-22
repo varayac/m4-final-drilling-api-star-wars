@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,8 +9,11 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"
         defer></script>
     <script src="./assets/js/index.js" defer></script>
 </head>
@@ -24,26 +27,126 @@
     </header>
 
     <main class="container">
-        <section>
-            <div id="dot" class="row">
-                <div class="col">
-                    <p>1-5</p>
-                </div>
-                <div class="col">
-                    <div class="vr"></div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">En esta sección...</h5>
-                            <p class="card-text">Encontraras informacion sobre los personajes mas populares de las
-                                peliculas.</p>
-                        </div>
+        <!-- ROW 1 -->
+        <section id="popular-section" class="row px-4 border-start border-2 border-secondary-subtle">
+            <!-- POPULAR MAIN CARD -->
+            <div id="popular-main-card" class="card m-3" style="width: 23rem; height: 9rem;">
+                <div class="card-body d-flex">
+                    <div class="h-100 ms-2 me-3">
+                        <div id="popular-circle" class="circle-card"></div>
+                    </div>
+                    <div>
+                        <h5 class="card-title">En esta sección...</h5>
+                        <p class="card-text">Encontraras informacion sobre los personajes mas populares de las
+                            peliculas.</p>
                     </div>
                 </div>
             </div>
+            <!-- Acá se inyecta el template... -->
         </section>
+
+        <!-- TEMPLATE POPULAR CHILD CARD -->
+        <template id="popular-template">
+            <div class="card m-3 jello-horizontal" style="width: 23rem; height: 7rem;">
+                <div class="card-body d-flex">
+                    <div class="w-10 ms-2 me-3">
+                        <div id="popular-circle" class="circle-card"></div>
+                    </div>
+                    <div>
+                        <h5 class="card-title">Luke Skywalker</h5>
+                        <p class="card-text">Estatura: <span class="height">172</span> cm. Peso <span
+                                class="mass">77</span> kg.</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- ROW 2 -->
+        <section id="secondary-section" class="row px-4 border-start border-2 border-secondary-subtle">
+            <!-- SECONDARY MAIN CARD -->
+            <div class="card m-3" style="width: 23rem;">
+                <div class="card-body d-flex">
+                    <div class="h-100 ms-2 me-3">
+                        <div id="secondary-circle" class="circle-card"></div>
+                    </div>
+                    <div>
+                        <h5 class="card-title">En esta sección...</h5>
+                        <p class="card-text">Encontraras informacion sobre los personajes secundarios importantes.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Acá se inyecta el template... -->
+        </section>
+
+        <!-- TEMPLATE SECONDARY CHILD CARDS -->
+        <template id="secondary-template">
+            <div class="card m-3" style="width: 23rem; height: 7rem;">
+                <div class="card-body d-flex">
+                    <div class="w-10 ms-2 me-3">
+                        <div id="secondary-circle" class="circle-card"></div>
+                    </div>
+                    <div>
+                        <h5 class="card-title">Owen Lars</h5>
+                        <p class="card-text">Estatura: 178 cm. Peso 120 kg.</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- ROW 3 -->
+        <section id="significant-section" class="row px-4 border-start border-2 border-secondary-subtle">
+            <!-- SIGNIFICANT MAIN CARD -->
+            <div class="card m-3" style="width: 23rem;">
+                <div class="card-body d-flex">
+                    <div class="h-100 ms-2 me-3">
+                        <div id="significant-circle" class="circle-card"></div>
+                    </div>
+                    <div>
+                        <h5 class="card-title">En esta sección...</h5>
+                        <p class="card-text">Encontraras otros personajes significativos.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Acá se inyecta el template... -->
+        </section>
+
+        <!-- TEMPLATE SIGNIFICANT CHILD CARDS -->
+        <template id="significant-template">
+            <div class="card m-3" style="width: 23rem; height: 7rem;">
+                <div class="card-body d-flex">
+                    <div class="w-10 ms-2 me-3">
+                        <div id="significant-circle" class="circle-card"></div>
+                    </div>
+                    <div class="">
+                        <h5 class="card-title">Wilhuff Tarkin</h5>
+                        <p class="card-text">Estatura: 180 cm. Peso unknown kg.</p>
+                    </div>
+                </div>
+            </div>
+        </template>
     </main>
+
+    <!-- PLACEHOLDER -->
+    <template id="placeholder-template">
+        <div class="card m-3" aria-hidden="true" style="width: 23rem;">
+            <div class="card-body d-flex">
+                <div class="h-100 ms-2 me-3">
+                    <div id="significant-circle" class="circle-card placeholder"></div>
+                </div>
+                <div>
+                    <h5 class="card-title placeholder-glow"><span class="placeholder col-8">En esta
+                            sección...</span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-7">Encontraras</span>
+                        <span class="placeholder col-4">otros</span>
+                        <span class="placeholder col-4">personajes</span>
+                        <span class="placeholder col-6">significativos.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </template>
 
 </body>
 
